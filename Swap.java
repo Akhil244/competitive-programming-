@@ -30,6 +30,13 @@ public class Swap{
         System.out.println(v1.a+" "+v2.b);
         
     }
+    
+    //Important Interview q on how to swap without using third variable
+    private static void swapimp(int a,int b){
+        a = a + b; 
+        b = a - b; 
+        a = a - b;
+    }
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         Swap sw=new Swap();
@@ -44,5 +51,8 @@ public class Swap{
         v1.a=a;
         v2.b=b;
         sw.swapbyreference(v1,v2);
+        swapimp(a,b);
+        System.out.print(a+" "+b);
+
     }
 }
