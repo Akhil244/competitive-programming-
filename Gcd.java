@@ -1,6 +1,39 @@
 import java.util.*;
 public class Gcd{
 
+    public static int optimal(int a,int b){
+
+        // here we directly return the answer by doing % everytime
+        while(a!=0 && b!=0){
+            if(a>b){
+              a%=b;
+           }
+            else{
+                b%=a;
+            }
+        }
+        int res=a;
+        if(a==0){
+            res=b;
+        }
+        return res;
+    }
+    public static int euc(int a,int b){
+        // here we subtract the bigger with smaller no untilome of the no becomes 0
+        while(a!=0 && b!=0){
+            if(a>b){
+              a-=b;
+           }
+            else{
+              b-=a;
+            }
+        }
+        int res=a;
+        if(a==0){
+            res=b;
+        }
+        return res;
+    }
     public static int gcd(int a,int b){
     
     // first we check if the nos are xeros if so then we return the other no
@@ -39,5 +72,9 @@ public class Gcd{
         int a=sc.nextInt(),b=sc.nextInt();
         int res=gcd(a,b);
         System.out.println(res);
+        int e=euc(a,b);
+        System.out.println(e);
+        int opt=optimal(a,b);
+        System.out.println(opt);
     }
 }
