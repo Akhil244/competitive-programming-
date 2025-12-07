@@ -1,6 +1,10 @@
 import java.util.*;
-public class Gcd{
+public class LcmGcd{
 
+    public static int lcm(int a,int b){
+        int lcm=(a*b)/optimal(a,b);
+        return lcm;
+    }
     public static int optimal(int a,int b){
 
         // here we directly return the answer by doing % everytime
@@ -76,5 +80,7 @@ public class Gcd{
         System.out.println(e);
         int opt=optimal(a,b);
         System.out.println(opt);
+        int lcm_r=lcm(a,b);
+        System.out.println(lcm_r);
     }
 }
