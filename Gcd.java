@@ -19,7 +19,7 @@ public class Gcd{
         return res;
     }
     public static int euc(int a,int b){
-        // here we subtract the bigger with smaller no untilome of the no becomes 0
+        // here we subtract the bigger with smaller no until one of the no becomes 0
         while(a!=0 && b!=0){
             if(a>b){
               a-=b;
