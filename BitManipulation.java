@@ -60,7 +60,18 @@ public class BitManipulation{
     private static int unsetright(int n){
         return n&(n-1);
     }
+     
+    // interview q: convert char lower to upper and upper to lower
+    // we perfrom bitwise OR to set the bit and AND to unset the bit
 
+    private static char uppercase(int n){
+        return (char)(n&'_'); // bitwise trick to convert to uppercase 
+    }
+
+
+    private static char lowercase(int n){
+        return (char)((n|' ')); // bitwise trick to convert
+    }
     private static int countset(int n){
         int count=0;
         // we unset as many 1's as possible=> no of setbit count is same as no of times set bit is removed
@@ -93,5 +104,9 @@ public class BitManipulation{
         System.out.println(s1);
         int co=countset(n);
         System.out.println(co);
+        char ch=sc.next().charAt(0); // to read a single char 
+        System.out.println(lowercase(ch));
+        System.out.println(uppercase(ch));
+        
     }
 }

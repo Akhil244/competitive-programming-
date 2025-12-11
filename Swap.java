@@ -36,10 +36,21 @@ public class Swap{
         a = a + b; 
         b = a - b; 
         a = a - b;
+        System.out.println(a+" "+b);
     }
+
+    // use bitwise XOR to swap 2 nos (Interview)
+    private static void swapbit(int a,int b){
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println(a+" "+b);
+    }
+
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
-        Swap sw=new Swap();
+        Swap sw=new Swap();  // since the swapbyvalue method isnt static we are creating a new Object in the main method and calling it 
+        // if the main method is static then we need note create the object for calling the method we can directly call or use it here
         int a=sc.nextInt();
         int b=sc.nextInt();
         // since the method is void we can directly call the defn method using the main obj without addn memory wastage
@@ -52,7 +63,6 @@ public class Swap{
         v2.b=b;
         sw.swapbyreference(v1,v2);
         swapimp(a,b);
-        System.out.print(a+" "+b);
-
+        swapbit(a,b);
     }
 }
