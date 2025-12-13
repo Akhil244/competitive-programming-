@@ -11,9 +11,11 @@ public class Array{
         }
         a[pos]=val;
     }
-
+    
+    // deleting an element at particular pos 
     private static void deletepos(int a[],int pos){
         int n=a.length;
+        // we are shifting the elements toward RHS starting from the pos till n-2 and assigning last no with 0
         for(int i=pos;i<=n-2;i++){
             a[i]=a[i+1];
         }
@@ -34,15 +36,10 @@ public class Array{
             System.out.print(a[i]+" ");
         }
         
-        int s=sc.nextInt();
-        int b[]=new int[s];
         int pos2=sc.nextInt();
-        for(int i=0;i<s;i++){
-            b[i]=sc.nextInt();   
-        }
-        deletepos(b,pos2);
-        for(int i=0;i<s;i++){
-            System.out.print(b[i]+" ");
+        deletepos(a,pos2);
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+" ");
         }
     }
 }
