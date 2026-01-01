@@ -12,7 +12,7 @@ public class BinarySearch{
 
                }
                else{
-                  l=m+1;
+                  l=m+1; // will go to the RHS
                }
             }
             else if(a[m]<val){
@@ -24,6 +24,45 @@ public class BinarySearch{
         }
         return ans;
     }
+   
+    
+    // we are finding the closest RHS value to the target 
+    private static int binaryfloor(int a[],int t){
+        int l=0,h=a.length-1,ans=-1;
+        while(l<=h){
+            int m=l+(h-l)/2;
+            if(a[m]==t){
+                ans=a[m];
+            }
+            else if(a[m]<t){
+                ans=a[m];
+                l=m+1;
+            }
+            else{
+                h=m-1;
+            }
+        }
+        return ans;
+    }
+    
+    // here in ceil we are finding the closest LHS value to the target
+    private static int binaryceil(int a[],int t){
+        int l=0,h=a.length-1,ans=-1;
+        while(l<=h){
+            int m=l+(h-l)/2;
+            if(a[m]==t){
+                ans=a[m];
+            }
+            else if(a[m]>t){
+                ans=a[m];
+                h=m-1; 
+            }
+            else{
+                l=m+1;
+            }
+        }
+        return ans; 
+    }
     
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
@@ -34,12 +73,22 @@ public class BinarySearch{
             a[i]=sc.nextInt();
         }
         int val=sc.nextInt();
-        boolean ok=true;
+        // boolean ok=true;
 
-        int res=bsearch(a,val,ok);
+        // int first=bsearch(a,val,ok);
+        // System.out.println(first);
+        // // if we want to see the last occurence we change ok to false to get the last occurence 
+        // int last=bsearch(a,val,false);
+        // System.out.println(last);
+        // int range=last-first+1;
+        // System.out.println(range); 
 
-        // if we want to see the last occurence we change ok to false
-        System.out.println(res);
+        // int fl=binaryfloor(a,val);
+        // int ce=binaryceil(a,val);
+        // System.out.println(fl);
+        // System.out.println(ce);
         
+        int abs=absdifference(a,val);
+        System.out.println(abs);
     }
 }
