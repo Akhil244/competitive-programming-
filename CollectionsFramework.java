@@ -33,6 +33,55 @@ public class CollectionsFramework{
 
        } 
     }
+
+    private static void Linkedlistdemo(){
+
+      // will be implementing the linkedlist using collections framework
+      // creating a linkedlist using list Interface 
+
+      List<Integer> l=new LinkedList<>();
+
+      // we can add elements using the builtin method
+
+      l.add(5);
+
+      l.add(6);
+
+      l.add(7);
+
+      System.out.println(l);
+
+      // remove the element using index
+
+      l.remove(1);
+
+      System.out.println(l);
+
+      // removing the element directly (same as arraylist)
+
+      l.remove(Integer.valueOf(5));
+
+      System.out.println(l);
+
+      // same as arraylist we use the methods addFirst() addLast()
+
+      l.addFirst(19);
+
+      l.addLast(53);
+
+      System.out.println(l);
+
+      //similarly set method set(i,v)
+      
+      l.set(1,90);
+
+      System.out.println(l);
+
+      //fetch the value at a particular index
+      
+      System.out.println(l.get(1));
+
+    }
     //implemeting Arraylist using a sample example
     private static void Arraylistdemo(){
 
@@ -211,7 +260,9 @@ public class CollectionsFramework{
 
     public static void main(String args[]){
 
-      Arraylistdemo();
+      // Arraylistdemo();
+
+      Linkedlistdemo();
 
     }
 }
