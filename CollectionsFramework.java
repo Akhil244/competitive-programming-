@@ -78,10 +78,21 @@ public class CollectionsFramework{
       System.out.println(l);
 
       //fetch the value at a particular index
-      
+
       System.out.println(l.get(1));
 
     }
+
+    
+    private static void Stackdemo(){
+       
+       //implementing stack using colections framework
+
+       //creating a stack 
+
+    }
+
+
     //implemeting Arraylist using a sample example
     private static void Arraylistdemo(){
 
